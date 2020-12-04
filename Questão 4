@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+  </head>
+  <body>
+    <h1>Entrada do Programa</h1>
+    <button onclick="executarExercicio()">OK</button>
+    <p id="resultado"></p>
+    <script>
+      var matrix = [];
+ 
+      function executarExercicio() {
+        for (let i = 0; i < 10; i++) {
+          matrix[i] = [];
+          
+          for (let j = 0; j < 5; j++) {
+            matrix[i][j] = Number(prompt('Digite um número para preencher a matriz: '));
+          }
+        }
+ 
+        var choosedColumn = Number(prompt('Digite a coluna para realizar a soma: '));
+        var sum = 0;
+ 
+        for (let x = 0; x < 10; x++) {
+          sum += matrix[x][choosedColumn-1];
+        }
+ 
+        document.getElementById("resultado").innerHTML = `A soma dos elementos da coluna ${choosedColumn} = ${sum}`;
+      }
+    </script>
+  </body>
+</html>
