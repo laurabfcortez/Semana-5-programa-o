@@ -1,0 +1,56 @@
+html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+  </head>
+  <body>
+    <h1>Entrada do Programa</h1>
+    <button onclick="executarExercicio()">OK</button>
+    <p id="resultado"></p>
+    <script>
+      var numbers = [];
+ 
+      function executarExercicio() {
+        var a = 1;
+        var i = 0;
+        var mostOcurredNumber = 0;
+ 
+        while (a != 0) {
+          if (i > 0) {
+            numbers.push(a);
+          }
+ 
+          a = Number(prompt("Informe um número:"));
+ 
+          i++;
+        }
+ 
+        for (let x = 0; x < numbers.length; x++) {
+          let currentNumber = numbers[x];
+ 
+          if (getAllIndexes(numbers, currentNumber).length > getAllIndexes(numbers, mostOcurredNumber).length) {
+            mostOcurredNumber = currentNumber;
+          }
+        }
+ 
+        document.getElementById("resultado").innerHTML = `
+        O número mais ocorrido foi: ${mostOcurredNumber}<br>
+        Seus índices são:<br>
+        ${getAllIndexes(numbers, mostOcurredNumber).join('<br>')}
+        `;
+      }
+ 
+      function getAllIndexes(array, value) {
+        var indexes = [];
+ 
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] == value) {
+            indexes.push(i)
+          }
+        }
+ 
+        return indexes;
+      }
+    </script>
+  </body>
+</html>
