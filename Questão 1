@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Programação Estruturada</title>
+</head>
+<body>
+    
+<h1>Entrada do Programa</h1>
+<button onclick='exercicio01()'>exercicio01</button>
+<button onclick='exercicio01()'>exercicio02</button>
+<p id="resultado"></p>
+<script>
+function exercicio01() {
+
+    var vetor_numeros = new Array();
+    var cont = 0;
+
+    while (cont < 10) {
+        var a = Number(prompt("Informe um número:"));
+        vetor_numeros[cont] = a;
+        cont++;
+    }
+    
+    document.write("Ordem digitada: <br >");
+    document.write(vetor_numeros);
+    document.write("<br ><br > <br >");
+    document.write("Ordem crescente: <br >");
+    vetor_numeros.sort();
+    document.write(vetor_numeros);
+}
+
+function exercicio02() {
+
+    var vetor_numeros = new Array();
+    var cont = 0;
+
+    while (cont < 10) {
+        var a = Number(prompt("Informe um número:"));
+        vetor_numeros[cont] = a;
+        cont++;
+    }
+    
+    document.write("Ordem digitada: <br >");
+    document.write(vetor_numeros);
+    document.write("<br ><br > <br >");
+    document.write("Ordem crescente: <br >");
+    vetor_numeros.sort();
+    document.write(vetor_numeros);
+}
+
+</script>
+</body>
+</html>
